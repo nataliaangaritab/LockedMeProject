@@ -1,7 +1,5 @@
 package lockedme;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class LockedMeProject
@@ -10,33 +8,17 @@ public class LockedMeProject
 	static final String folderpath="C:\\Users\\natal\\Desktop\\Simplilearn\\Phase1-LockedMeProject\\Files";
 	public static void main(String[] args)
 	{
-		//Variable declaration
-		Scanner obj = new Scanner(System.in);
+		//Delete a file
 		String fileName;
-		int linesCount;
-		List<String> content = new ArrayList<String>();
-		
-		//Read file name from user
-		System.out.println("Enter file name: ");
+		Scanner obj = new Scanner(System.in);
+		System.out.println("Enter file name to be deleted: ");
 		fileName = obj.nextLine();
 		
-		//Read number of lines from user
-		System.out.println("Enter number of lines in the file: ");
-		linesCount = Integer.parseInt(obj.nextLine());
-		
-		//Read lines from user
-		for(int i=1; i<=linesCount; i++)
-		{
-			System.out.println("Enter line " + i + ": ");
-			content.add(obj.nextLine());
-		}
-		
-		//Save content into the file
-		boolean isSaved = FileManager.createFile(folderpath, fileName, content);
-		if(isSaved)
-			System.out.println("File and data saved successfully!");
+		boolean isDeleted = FileManager.deleteFile(folderpath, fileName);
+		if(isDeleted)
+			System.out.println("File deleted successfully!!");
 		else
-			System.out.println("Some error ocurred. Please contact Support !!!");
+			System.out.println("File not in folder or some access issue");
 		
 		//Close Scanner object
 		obj.close();

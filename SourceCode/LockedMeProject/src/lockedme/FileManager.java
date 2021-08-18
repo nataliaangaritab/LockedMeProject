@@ -7,6 +7,7 @@ import java.util.List;
 
 public class FileManager
 {
+	
 	/**
 	 * Method will return file names from the folder (folderpath).
 	 * @param folderpath
@@ -28,6 +29,7 @@ public class FileManager
 		//Return the List
 		return fileNames;
 	}
+	
 	/**
 	 * Method will create or append content into the file specified
 	 * @param folderpath
@@ -48,6 +50,29 @@ public class FileManager
 			}
 			fw.close();
 			return true;
+		}
+		catch(Exception Ex)
+		{
+			return false;
+		}
+	}
+	
+	/**
+	 * Method will delete the file name if it exists.
+	 * @param folderpath
+	 * @param fileName
+	 * @return boolean
+	 */
+	public static boolean deleteFile(String folderpath, String fileName)
+	{
+		File file = new File(folderpath + "\\" + fileName);
+		
+		try
+		{
+			if(file.delete())
+				return true;
+			else
+				return false;
 		}
 		catch(Exception Ex)
 		{
