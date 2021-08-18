@@ -1,11 +1,17 @@
 package lockedme;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileManager
 {
+	/**
+	 * Method will return file names from the folder (folderpath).
+	 * @param folderpath
+	 * @return List<String>
+	 */
 	public static List<String> getFiles(String folderpath)
 	{
 		//Create file object
@@ -21,5 +27,31 @@ public class FileManager
 			fileNames.add(f.getName());
 		//Return the List
 		return fileNames;
+	}
+	/**
+	 * Method will create or append content into the file specified
+	 * @param folderpath
+	 * @param fileName
+	 * @param content
+	 * @return boolean
+	 */
+	public static boolean createFile(String folderpath, String fileName, List<String> content)
+	{
+		try
+		{
+			File newfile = new File(folderpath, fileName);
+			FileWriter fw = new FileWriter(newfile);
+			
+			for(String s:content)
+			{
+				fw.write(s+"\n");
+			}
+			fw.close();
+			return true;
+		}
+		catch(Exception Ex)
+		{
+			return false;
+		}
 	}
 }
