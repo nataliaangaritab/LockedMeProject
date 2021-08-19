@@ -33,7 +33,7 @@ public class FileManager
 	}
 	
 	/**
-	 * Method will create or append content into the file specified
+	 * Method will create or append content into the file specified.
 	 * @param folderpath
 	 * @param fileName
 	 * @param content
@@ -84,10 +84,10 @@ public class FileManager
 	}
 	
 	/**
-	 * Method will search for a file specified by the user
+	 * Method will search for a file specified by the user.
 	 * @param folderpath
 	 * @param fileName
-	 * @return
+	 * @return boolean
 	 */
 	public static boolean searchFile(String folderpath, String fileName)
 	{
