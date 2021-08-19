@@ -70,7 +70,7 @@ public class LockedMeProject
 			System.out.println("No files in directory");
 		else
 		{
-			System.out.println("No files in directory");
+			System.out.println("FILES LIST IS BELLOW:");
 			for(String f:fileNames)
 				System.out.println(f);
 		}

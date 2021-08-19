@@ -3,6 +3,7 @@ package lockedme;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class FileManager
@@ -23,6 +24,7 @@ public class FileManager
 		
 		//Declare list to store file names
 		List<String> fileNames = new ArrayList<String>();
+		Collections.sort(fileNames);
 		
 		for(File f:listOfFiles)
 			fileNames.add(f.getName());
